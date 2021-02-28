@@ -1,0 +1,27 @@
+<form [formGroup]="bankAccountForm">
+    <div class="row">
+        <div class="form-group input-group col-md-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">בנק</span>
+            </div>
+            <select class="form-control" formControlName="holding" (change)="changeHolding($event)">
+                <option *ngFor="let i of ['פועלים', 'דיסקונט', 'מזרחי', 'לאומי']" [value]="i">{{i}}</option>
+            </select>
+        </div>
+        <div class="form-group input-group col-md-4" [ngStyle]="{'margin-right': '-50px'}">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">סניף</span>
+            </div>
+            <input type="text" class="form-control" formControlName="bankBranch">            
+        </div>
+        <div class="form-group input-group col-md-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">חשבון</span>
+            </div>
+            <input type="text" class="form-control" formControlName="accountNumber"> 
+        </div>
+        <div class="delete">
+            <a (click)="deleteAccountClick()"><span>- הסר</span></a>
+        </div>
+    </div>
+</form>

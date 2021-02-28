@@ -1,0 +1,38 @@
+<div class="bank-accounts-wrap row">
+    <div class="center col-md-8">
+        <div class="prev">
+            <button type="button" routerLink="/personal-details" class="btn">
+                <img src="/assets/images/svg/arrow-right-circle.svg">
+            </button>
+            <div class="prev-text"><span>חזור</span></div>
+        </div>
+        <div class="bank-accounts">
+            <h1>אנא מלאו את פרטי החשבונות של חברת "{{companyName}}"</h1>
+            <h4>ח.פ: {{companyNumber}}</h4>
+            <form [formGroup]="companyHoldingForm">
+                <div class="row">
+                    <div class="form-group input-group col-md-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">% החזקה</span>
+                        </div>
+                        <select class="form-control" formControlName="holding" (change)="changeHolding($event)">
+                            <option *ngFor="let i of holdingRange" [value]="i">{{i}}%</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <div class="overflow">
+                <app-account *ngFor="let account of accounts" [account]="account" (deleteAccount)="deleteAccount($event)"></app-account>
+            </div>
+            <div class="add-account">
+                <a (click)="addAccount()"><span>+ הוסף חשבון</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="next">
+        <button type="submit" class="btn">
+            <img src="/assets/images/svg/arrow-left-circle.svg">
+        </button>
+        <div class="next-text"><span>המשך</span></div>
+    </div>
+</div>

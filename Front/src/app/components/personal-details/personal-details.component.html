@@ -1,0 +1,103 @@
+<div class="personal-details-wrap row">
+    <div class="center col-md-8">
+        <div class="personal-details">
+            <h1>אנא השלימו את הפרטים הבאים</h1>
+            <form [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="firstName">שם פרטי:</label>
+                            <input type="text" formControlName="firstName" class="form-control" 
+                             [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+                             [matTooltip]="getToolTipError(f.firstName, 'firstName')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="familyName">שם משפחה:</label>
+                            <input type="text" formControlName="familyName" class="form-control" 
+                             [ngClass]="{ 'is-invalid': submitted && f.familyName.errors }"
+                             [matTooltip]="getToolTipError(f.familyName, 'familyName')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="id">תעודת זהות:</label>
+                            <input type="text" formControlName="id" class="form-control" 
+                             [ngClass]="{ 'is-invalid': submitted && f.id.errors }"
+                             [matTooltip]="getToolTipError(f.id, 'id')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="dateOfBirth">תאריך לידה:</label>
+                            <input type="text" formControlName="dateOfBirth" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }"
+                             [matTooltip]="getToolTipError(f.dateOfBirth, 'dateOfBirth')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="phoneNumber">טלפון:</label>
+                            <input type="tel" formControlName="phoneNumber" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.phoneNumber.errors }" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="email">דואר אלקטרוני:</label>
+                            <input type="email" formControlName="email" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                             [matTooltip]="getToolTipError(f.email, 'email')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="companyName">שם העסק:</label>
+                            <input type="text" formControlName="companyName" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.companyName.errors }"
+                             [matTooltip]="getToolTipError(f.companyName, 'companyName')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 form-field">
+                        <div class="center my-auto mr-0 ml-auto">
+                            <label for="companyNumber">ח.פ/שותפות/עמותה:</label>
+                            <input type="text" formControlName="companyNumber" class="form-control"
+                             [ngClass]="{ 'is-invalid': submitted && f.companyNumber.errors }"
+                             [matTooltip]="getToolTipError(f.companyNumber, 'companyNumber')"
+                             matTooltipClass="tooltip-red"
+                             matTooltipPosition="above" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group next">
+                    <button type="submit" class="btn">
+                        <img src="/assets/images/svg/arrow-left-circle.svg">
+                    </button>
+                    <div class="next-text"><span>המשך</span></div>
+                </div>
+            </form>
+            <div *ngIf="isError" class="alert alert-danger server-error" role="alert">
+                {{error}}
+            </div>
+        </div>
+    </div>
+</div>
