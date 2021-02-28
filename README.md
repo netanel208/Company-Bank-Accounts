@@ -11,7 +11,7 @@ Running this project will only run the server side. All the functionality requir
 
 ## Front side
 
-- [Front README](https://github.com/netanel208/Company-Bank-Accounts/blob/master/images/login1.PNG)
+- [Front README](https://github.com/netanel208/Company-Bank-Accounts/blob/master/Front/README.md)
 
 ### Login page
 ![alt text](https://github.com/netanel208/Company-Bank-Accounts-App/blob/master/images/1.PNG)
