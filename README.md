@@ -26,4 +26,4 @@ Running this project will only run the server side. All the functionality requir
 ![alt text](https://github.com/netanel208/Company-Bank-Accounts/blob/master/images/bank-accounts1.PNG)
 - There are some missing of functionality in this screen:
   - Deleting bank accounts - delete from screen not delete from DB, missing calling to this service.
-  - Change exsiting bank account - not effect.
+  - Change exsiting bank account - no effect.
