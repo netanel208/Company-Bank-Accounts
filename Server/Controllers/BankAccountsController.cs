@@ -55,7 +55,7 @@ namespace CompanyBankAccountsApp.Controllers
         }
 
         // POST: api/BankAccounts/5
-        [HttpPost("{id}")]
+        [HttpPost("{userId}")]
         public async Task<IActionResult> SaveBankAccount(string userId, [FromBody] BankAccountVM bankAccount)
         {
             try

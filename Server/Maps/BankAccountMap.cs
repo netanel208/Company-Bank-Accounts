@@ -105,7 +105,7 @@ namespace CompanyBankAccountsApp.Maps
             {
                 return new BankAccount()
                 {
-                    ID = bankAccountVM.ID,
+                    ID = !string.IsNullOrEmpty(bankAccountVM.ID) ? int.Parse(bankAccountVM.ID) : 0,
                     UserID = bankAccountVM.UserID,
                     CompanyID = bankAccountVM.CompanyID,
                     BankName = bankAccountVM.BankName,
@@ -126,7 +126,7 @@ namespace CompanyBankAccountsApp.Maps
             {
                 return new BankAccountVM()
                 {
-                    ID = bankAccount.ID,
+                    ID = bankAccount.ID.ToString(),
                     UserID = bankAccount.UserID,
                     CompanyID = bankAccount.CompanyID,
                     BankName = bankAccount.BankName,

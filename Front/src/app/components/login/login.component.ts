@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         localStorage.clear();
         this.isError = true;
         this.loading = false;
-        this.error = error;
+        this.error = 'Invalid details'; //need to return here object from server that contains the error messages
     });
 
     this.loading = true;

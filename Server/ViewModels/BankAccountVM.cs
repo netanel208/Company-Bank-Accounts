@@ -8,8 +8,7 @@ namespace CompanyBankAccountsApp.ViewModels
 {
     public class BankAccountVM
     {
-        [Required]
-        public int ID { get; set; }
+        public string ID { get; set; }
 
         [Required]
         [DataType(DataType.Text)]

@@ -4,7 +4,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">בנק</span>
             </div>
-            <select class="form-control" formControlName="holding" (change)="changeHolding($event)">
+            <select class="form-control" formControlName="bankName" [value]="account.bankName" (change)="changeAccount()">
                 <option *ngFor="let i of ['פועלים', 'דיסקונט', 'מזרחי', 'לאומי']" [value]="i">{{i}}</option>
             </select>
         </div>
@@ -12,13 +12,13 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">סניף</span>
             </div>
-            <input type="text" class="form-control" formControlName="bankBranch">            
+            <input type="text" class="form-control" formControlName="bankBranch" [value]="account.bankBranch" (change)="changeAccount()">            
         </div>
         <div class="form-group input-group col-md-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">חשבון</span>
             </div>
-            <input type="text" class="form-control" formControlName="accountNumber"> 
+            <input type="text" class="form-control" formControlName="accountNumber" [value]="account.accountNumber" (change)="changeAccount()"> 
         </div>
         <div class="delete">
             <a (click)="deleteAccountClick()"><span>- הסר</span></a>

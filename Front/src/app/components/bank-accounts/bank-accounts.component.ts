@@ -75,7 +75,6 @@ export class BankAccountsComponent implements OnInit{
       const index = this.accounts.findIndex(el => el.id === '');
       if(index == -1) return;
       this.accounts.splice(index, 1);
-      console.log(this.accounts)
     }
   }
 }
